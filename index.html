@@ -167,10 +167,30 @@ const SITE = {
         { title: { en: "Legal work only", hi: "सिर्फ़ कानूनी काम" }, text: { en: "Everything I do is ethical and legal.", hi: "मेरा हर काम एथिकल और कानूनी है।" } }
       ] },
 
-    /* Gallery is hidden for now. When you have photos: set show: true and add lines like
-       { src: "photo1.jpg", caption: { en: "", hi: "" } }, */
-    { id: "gallery", type: "gallery", show: false, title: { en: "Gallery", hi: "गैलरी" },
-      items: [] },
+    /* GALLERY: one line per photo. The file name must match the uploaded file exactly.
+       To add a photo, copy a line. To remove one, delete its line. Order here = order on the page. */
+    { id: "gallery", type: "gallery", show: true, title: { en: "Gallery", hi: "गैलरी" },
+      items: [
+        { src: "1778671054510.png", caption: { en: "", hi: "" } },
+        { src: "1778774989426.png", caption: { en: "", hi: "" } },
+        { src: "1778517166069.png", caption: { en: "", hi: "" } },
+        { src: "IMG_20260630_181421.jpg", caption: { en: "", hi: "" } },
+        { src: "IMG_20260721_073843.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260908_143119624-COLLAGE.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260908_143119624.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260908_143541342.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260912_161129858.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260912_170433567.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260916_122258003.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260916_152917841.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260926_115058820_PORTRAIT.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260926_115224526_PORTRAIT.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260926_130934546.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260926_130951322.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260926_140624964.jpg", caption: { en: "", hi: "" } },
+        { src: "RIYAN_20260926_140634549_PORTRAIT.jpg", caption: { en: "", hi: "" } },
+        { src: "LOCKSCREEN_CUSTOM_AOD_IMAGE_20261018_161154.png", caption: { en: "", hi: "" } }
+      ] },
 
     { id: "contact", type: "contact", show: true, title: { en: "Contact", hi: "संपर्क करें" },
       note: { en: "Message me on Telegram or Instagram, or send an email, for work, questions or a security check.",
