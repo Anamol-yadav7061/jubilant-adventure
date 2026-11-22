@@ -34,7 +34,7 @@ h1{margin:0;font-size:clamp(32px,7vw,56px);line-height:1.12}
 .btn.main{background:var(--acc);color:#04120a;border-color:var(--acc);font-weight:700}
 .btn.sm{padding:4px 10px;font-size:13px}
 .photo{width:230px;height:230px;border-radius:50%;border:2px solid var(--acc);padding:6px;justify-self:center;box-shadow:0 0 40px rgba(61,255,154,.15)}
-.photo>*{width:100%;height:100%;border-radius:50%;object-fit:cover;display:grid;place-items:center;background:var(--panel);color:var(--acc);font-size:56px;font-weight:700}
+.photo>*{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:53% 40%;display:grid;place-items:center;background:var(--panel);color:var(--acc);font-size:56px;font-weight:700}
 section{padding:46px 0;border-top:1px solid var(--line)}
 h2{margin:0 0 20px;font-size:24px}
 h2::before{content:"> ";color:var(--acc)}
@@ -112,38 +112,76 @@ footer a:hover{color:var(--acc)}
 const SITE = {
   name:     { en: "Anamol Kumar Yadav", hi: "अनमोल कुमार यादव" },
   initials: "AY",
-  photo:    "",   /* MAIN PHOTO: file name or URL, e.g. "images/me.jpg" */
+  photo:    "IMG_20260629_150530.jpg",   /* MAIN PHOTO: file name must match the uploaded file exactly */
   roles:    [ { en: "Hacker and Developer", hi: "हैकर और डेवलपर" } ],
   hello:    { en: "Hi, I am", hi: "नमस्ते, मैं हूँ" },
   tagline:  { en: "I break systems so I can make them unbreakable.", hi: "मैं सिस्टम तोड़ता हूँ ताकि उन्हें अटूट बना सकूँ।" },
   email:     "anamolsir7061@gmail.com",
   instagram: "https://www.instagram.com/anamol_7061?bqrl=cWdrMHNvcTl4MWF1",
+  telegram:  "https://t.me/AnamolKumarsir",
   /* Sections show top to bottom. Delete a block or set show:false to hide it.
      Types: text, chips, cards, gallery, contact. Copy a block to add a section. */
   sections: [
     { id: "about", type: "text", show: true, title: { en: "About", hi: "मेरे बारे में" },
-      body: [ { en: "I am Anamol Kumar Yadav, a hacker and developer. I test websites, apps and accounts for weak spots, then build and fix them so they stay secure.",
-                hi: "मैं अनमोल कुमार यादव हूँ, एक हैकर और डेवलपर। मैं वेबसाइट, ऐप और अकाउंट की कमज़ोरियाँ ढूँढता हूँ और फिर उन्हें ठीक करके सुरक्षित बनाता हूँ।" } ] },
+      body: [
+        { en: "I’m Anamol Kumar Yadav, a hacker and a developer. I like understanding how websites, apps and accounts work, and where they can fail.",
+          hi: "मैं अनमोल कुमार यादव हूँ, एक हैकर और एक डेवलपर। मुझे यह समझना पसंद है कि वेबसाइट, ऐप और अकाउंट कैसे काम करते हैं और कहाँ कमज़ोर पड़ सकते हैं।" },
+        { en: "As an ethical hacker, I look for weak spots such as weak passwords, unsafe logins and wrong settings before someone with bad intentions finds them. As a developer, I build websites and apps and fix what I find, so everything stays secure and keeps working.",
+          hi: "एथिकल हैकर के तौर पर मैं कमज़ोर जगहें ढूँढता हूँ, जैसे कमज़ोर पासवर्ड, असुरक्षित लॉगिन और ग़लत सेटिंग, इससे पहले कि कोई बुरी नीयत वाला उन्हें ढूँढे। डेवलपर के तौर पर मैं वेबसाइट और ऐप बनाता हूँ और जो कमी मिले उसे ठीक करता हूँ, ताकि सब कुछ सुरक्षित रहे और चलता रहे।" },
+        { en: "I learn by building and breaking things in a safe way. I explain every problem in plain language, so you know what was wrong and what to do next.",
+          hi: "मैं चीज़ों को सुरक्षित तरीक़े से बनाकर और तोड़कर सीखता हूँ। हर समस्या को आसान भाषा में समझाता हूँ, ताकि आपको पता चले कि क्या गड़बड़ थी और आगे क्या करना है।" }
+      ] },
+
     { id: "skills", type: "chips", show: true, title: { en: "Skills", hi: "स्किल्स" },
-      items: [ { en: "Ethical Hacking", hi: "एथिकल हैकिंग" }, { en: "Web Development", hi: "वेब डेवलपमेंट" },
-               { en: "App Development", hi: "ऐप डेवलपमेंट" }, { en: "Security Testing", hi: "सिक्योरिटी टेस्टिंग" },
-               { en: "Problem Solving", hi: "समस्या समाधान" } ] },
+      items: [
+        { en: "Ethical Hacking", hi: "एथिकल हैकिंग" },
+        { en: "Web Development", hi: "वेब डेवलपमेंट" },
+        { en: "App Development", hi: "ऐप डेवलपमेंट" },
+        { en: "Security Testing", hi: "सिक्योरिटी टेस्टिंग" },
+        { en: "Fixing Vulnerabilities", hi: "कमज़ोरियाँ ठीक करना" },
+        { en: "Password and Account Safety", hi: "पासवर्ड और अकाउंट सुरक्षा" },
+        { en: "Problem Solving", hi: "समस्या समाधान" }
+      ] },
+
     { id: "services", type: "cards", show: true, title: { en: "What I do", hi: "मैं क्या करता हूँ" },
-      items: [ { title: { en: "Websites and apps", hi: "वेबसाइट और ऐप" }, text: { en: "I design and build them from scratch.", hi: "मैं इन्हें शुरू से डिज़ाइन करके बनाता हूँ।" } },
-               { title: { en: "Security checks", hi: "सिक्योरिटी जाँच" }, text: { en: "I look for weak spots before attackers do.", hi: "हमलावरों से पहले मैं कमज़ोर जगहें ढूँढ लेता हूँ।" } },
-               { title: { en: "Fixing vulnerabilities", hi: "कमज़ोरियाँ ठीक करना" }, text: { en: "I patch the problems and harden the system.", hi: "मैं समस्याएँ ठीक करके सिस्टम को मज़बूत बनाता हूँ।" } } ] },
-    { id: "gallery", type: "gallery", show: true, title: { en: "Gallery", hi: "गैलरी" },
-      /* One line per photo: { src: "images/a.jpg", caption: { en: "", hi: "" } }. Order here = order on the page. */
+      items: [
+        { title: { en: "Websites", hi: "वेबसाइट बनाना" }, text: { en: "Fast, mobile-friendly websites built from scratch.", hi: "तेज़ और मोबाइल पर सही दिखने वाली वेबसाइट, शुरू से तैयार।" } },
+        { title: { en: "Apps", hi: "ऐप बनाना" }, text: { en: "Simple, useful apps made around your idea.", hi: "आपके आइडिया के हिसाब से आसान और काम के ऐप।" } },
+        { title: { en: "Security checks", hi: "सिक्योरिटी जाँच" }, text: { en: "I test your site or app for weak spots, with your permission.", hi: "आपकी इजाज़त से आपकी वेबसाइट या ऐप की कमज़ोरियाँ जाँचता हूँ।" } },
+        { title: { en: "Fixing problems", hi: "कमज़ोरियाँ ठीक करना" }, text: { en: "I patch what I find and make the system stronger.", hi: "जो मिलता है उसे ठीक करके सिस्टम को मज़बूत बनाता हूँ।" } },
+        { title: { en: "Account safety advice", hi: "अकाउंट सुरक्षा सलाह" }, text: { en: "Simple steps to keep your accounts and data safe.", hi: "आपके अकाउंट और डेटा को सुरक्षित रखने के आसान तरीक़े।" } }
+      ] },
+
+    { id: "process", type: "cards", show: true, title: { en: "How I work", hi: "मैं कैसे काम करता हूँ" },
+      items: [
+        { title: { en: "Understand", hi: "समझना" }, text: { en: "I first learn what you need and what must be protected.", hi: "पहले समझता हूँ कि आपको क्या चाहिए और क्या सुरक्षित रखना है।" } },
+        { title: { en: "Test", hi: "जाँचना" }, text: { en: "I look for weak spots in a safe, controlled way.", hi: "सुरक्षित और नियंत्रित तरीक़े से कमज़ोर जगहें ढूँढता हूँ।" } },
+        { title: { en: "Fix", hi: "ठीक करना" }, text: { en: "I repair the problems and build the missing protection.", hi: "समस्याएँ ठीक करता हूँ और कमी वाली सुरक्षा जोड़ता हूँ।" } },
+        { title: { en: "Explain", hi: "समझाना" }, text: { en: "I tell you what I found, in plain words.", hi: "जो मिला, उसे आसान शब्दों में बताता हूँ।" } }
+      ] },
+
+    { id: "rules", type: "cards", show: true, title: { en: "My rules", hi: "मेरे नियम" },
+      items: [
+        { title: { en: "Permission first", hi: "पहले इजाज़त" }, text: { en: "I only test what its owner has allowed.", hi: "मैं सिर्फ़ वही जाँचता हूँ जिसके मालिक ने इजाज़त दी हो।" } },
+        { title: { en: "Your data stays private", hi: "आपका डेटा निजी" }, text: { en: "I never share or misuse what I see.", hi: "जो देखता हूँ, उसे न किसी को बताता हूँ और न ग़लत इस्तेमाल करता हूँ।" } },
+        { title: { en: "Legal work only", hi: "सिर्फ़ कानूनी काम" }, text: { en: "Everything I do is ethical and legal.", hi: "मेरा हर काम एथिकल और कानूनी है।" } }
+      ] },
+
+    /* Gallery is hidden for now. When you have photos: set show: true and add lines like
+       { src: "photo1.jpg", caption: { en: "", hi: "" } }, */
+    { id: "gallery", type: "gallery", show: false, title: { en: "Gallery", hi: "गैलरी" },
       items: [] },
+
     { id: "contact", type: "contact", show: true, title: { en: "Contact", hi: "संपर्क करें" },
-      note: { en: "Message me for work, questions or a security check.", hi: "काम, सवाल या सिक्योरिटी जाँच के लिए मुझे मैसेज करें।" } }
+      note: { en: "Message me on Telegram or Instagram, or send an email, for work, questions or a security check.",
+              hi: "काम, सवाल या सिक्योरिटी जाँच के लिए मुझे टेलीग्राम या इंस्टाग्राम पर मैसेज करें, या ईमेल भेजें।" } }
   ]
 };
 /*DATA_END*/
 
 var UI = {
   email: { en: "Email", hi: "ईमेल" }, instagram: { en: "Instagram", hi: "इंस्टाग्राम" },
-  follow: { en: "Follow me", hi: "फ़ॉलो करें" }, mail: { en: "Send email", hi: "ईमेल भेजें" },
+  follow: { en: "Follow me", hi: "फ़ॉलो करें" }, telegram: { en: "Telegram", hi: "टेलीग्राम" }, msg: { en: "Message me", hi: "मैसेज करें" }, mail: { en: "Send email", hi: "ईमेल भेजें" },
   empty: { en: "Photos will appear here", hi: "फ़ोटो यहाँ दिखेंगी" },
   footer: { en: "Ethical and legal work only.", hi: "सिर्फ़ एथिकल और कानूनी काम।" }
 };
@@ -176,6 +214,7 @@ function renderSection(s){
     h += '<p style="color:var(--dim);margin:0 0 16px">' + E(T(s.note)) + '</p><div class="contact">';
     if (SITE.email) h += '<a class="card" href="mailto:' + E(SITE.email) + '"><small>' + E(T(UI.email)) + '</small><b>' + E(SITE.email) + '</b><small>' + E(T(UI.mail)) + '</small></a>';
     if (SITE.instagram) h += '<a class="card" href="' + E(SITE.instagram) + '" target="_blank" rel="noopener"><small>' + E(T(UI.instagram)) + '</small><b>' + E(handle()) + '</b><small>' + E(T(UI.follow)) + '</small></a>';
+    if (SITE.telegram) h += '<a class="card" href="' + E(SITE.telegram) + '" target="_blank" rel="noopener"><small>' + E(T(UI.telegram)) + '</small><b>@' + E(SITE.telegram.split("/").pop()) + '</b><small>' + E(T(UI.msg)) + '</small></a>';
     h += '</div>';
   }
   return h + '</section>';
@@ -190,12 +229,12 @@ function render(quiet){
   document.getElementById("app").innerHTML =
     '<div class="hero"><div><p class="hi mono">$ ' + E(T(SITE.hello)) + '</p><h1>' + E(T(SITE.name)) + '</h1>' +
     '<p class="role mono"><span id="typed"></span><span class="cur"></span></p><p class="tag">' + E(T(SITE.tagline)) + '</p>' +
-    '<div class="cta"><a class="btn main" href="mailto:' + E(SITE.email) + '">' + E(T(UI.mail)) + '</a><a class="btn" href="' + E(SITE.instagram) + '" target="_blank" rel="noopener">' + E(T(UI.instagram)) + '</a></div></div>' +
+    '<div class="cta"><a class="btn main" href="mailto:' + E(SITE.email) + '">' + E(T(UI.mail)) + '</a><a class="btn" href="' + E(SITE.instagram) + '" target="_blank" rel="noopener">' + E(T(UI.instagram)) + '</a>' + (SITE.telegram ? '<a class="btn" href="' + E(SITE.telegram) + '" target="_blank" rel="noopener">' + E(T(UI.telegram)) + '</a>' : '') + '</div></div>' +
     '<div class="photo">' + pic + '</div></div>' + live.map(renderSection).join("");
   document.getElementById("nav").innerHTML = live.map(function(s){ return '<a href="#' + E(s.id) + '">' + E(T(s.title)) + '</a>'; }).join("");
   document.getElementById("brand").textContent = "~/" + SITE.initials.toLowerCase();
   document.getElementById("fcopy").textContent = "\u00A9 " + new Date().getFullYear() + " " + T(SITE.name) + ". " + T(UI.footer);
-  document.getElementById("flinks").innerHTML = '<a href="mailto:' + E(SITE.email) + '">' + E(SITE.email) + '</a> &nbsp; <a href="' + E(SITE.instagram) + '" target="_blank" rel="noopener">Instagram</a>';
+  document.getElementById("flinks").innerHTML = '<a href="mailto:' + E(SITE.email) + '">' + E(SITE.email) + '</a> &nbsp; <a href="' + E(SITE.instagram) + '" target="_blank" rel="noopener">Instagram</a>' + (SITE.telegram ? ' &nbsp; <a href="' + E(SITE.telegram) + '" target="_blank" rel="noopener">Telegram</a>' : '');
   [].forEach.call(document.querySelectorAll(".lang button"), function(b){ b.setAttribute("aria-pressed", String(b.dataset.l === lang)); });
   var calm = quiet || matchMedia("(prefers-reduced-motion: reduce)").matches;
   clearTimeout(tm);
