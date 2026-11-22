@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anamol Kumar Yadav | Hacker and Developer</title>
+<style>
+:root{--bg:#05090c;--panel:#0c1317;--line:#1b2a30;--text:#d6e6e0;--dim:#7a948e;--acc:#3dff9a;--acc2:#35c8ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI","Noto Sans Devanagari","Mangal",sans-serif}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(5,9,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:14px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-weight:700;color:var(--acc)}
+nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none;min-width:0}
+nav a{padding:4px 10px;border-radius:6px;color:var(--dim);white-space:nowrap;font-size:14px}
+nav a:hover{color:var(--text);background:var(--panel)}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-left:auto}
+.lang button{background:none;border:0;color:var(--dim);padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--acc);color:#04120a;font-weight:700}
+.hero{padding:56px 0 40px;display:grid;grid-template-columns:1fr 230px;gap:36px;align-items:center}
+.hero .hi{color:var(--acc);font-size:14px;margin:0 0 6px}
+h1{margin:0;font-size:clamp(32px,7vw,56px);line-height:1.12}
+.role{margin:12px 0 0;font-size:18px;color:var(--acc2);min-height:1.6em}
+.tag{margin:14px 0 0;color:var(--dim);max-width:46ch}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{padding:10px 18px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:inherit;cursor:pointer;transition:transform .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--acc)}
+.btn.main{background:var(--acc);color:#04120a;border-color:var(--acc);font-weight:700}
+.btn.sm{padding:4px 10px;font-size:13px}
+.photo{width:230px;height:230px;border-radius:50%;border:2px solid var(--acc);padding:6px;justify-self:center;box-shadow:0 0 40px rgba(61,255,154,.15)}
+.photo>*{width:100%;height:100%;border-radius:50%;object-fit:cover;display:grid;place-items:center;background:var(--panel);color:var(--acc);font-size:56px;font-weight:700}
+section{padding:46px 0;border-top:1px solid var(--line)}
+h2{margin:0 0 20px;font-size:24px}
+h2::before{content:"> ";color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;transition:border-color .2s}
+.card:hover{border-color:var(--acc)}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--dim);font-size:15px}
+.bio p{max-width:68ch;margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 16px;font-size:15px}
+.gal{columns:3 200px;column-gap:12px}
+.ph{display:block;position:relative;width:100%;margin:0 0 12px;padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);cursor:pointer;break-inside:avoid;color:var(--dim);font-size:13px;text-align:center}
+.ph img{display:block;width:100%;height:auto;transition:transform .4s}
+.ph:hover img{transform:scale(1.04)}
+.ph.empty{aspect-ratio:1/1;display:grid;place-items:center;border-style:dashed;cursor:default}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;font-size:13px;text-align:left}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.contact a{display:block}
+.contact small{color:var(--dim);display:block}
+.contact b{word-break:break-all}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+footer a:hover{color:var(--acc)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;place-items:center;z-index:50;padding:20px}
+#lb.on{display:grid}
+#lb img{max-width:100%;max-height:86vh;border-radius:8px}
+#lb button{position:absolute;top:50%;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:26px;width:44px;height:56px;border-radius:8px;cursor:pointer}
+#lb .pv{left:10px}#lb .nx{right:10px}
+.cur{display:inline-block;width:9px;height:1.05em;background:var(--acc2);vertical-align:text-bottom;margin-left:3px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.rv.on{opacity:1;transform:none}
+/* owner edit panel */
+#ed-open{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;box-shadow:0 4px 24px rgba(0,0,0,.5)}
+#ed{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--panel);border-left:1px solid var(--line);z-index:60;overflow-y:auto;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(24px + env(safe-area-inset-bottom,0px))}
+#ed[hidden]{display:none}
+#ed h3{margin:22px 0 8px;font-size:15px;color:var(--acc)}
+#ed label{display:block;font-size:13px;color:var(--dim);margin:10px 0 3px}
+#ed input[type=text],#ed textarea{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:8px;font:inherit;font-size:15px}
+#ed textarea{min-height:90px;resize:vertical}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.th{display:grid;grid-template-columns:64px 1fr;gap:10px;margin:10px 0;padding:8px;border:1px solid var(--line);border-radius:8px}
+.th img{width:64px;height:64px;object-fit:cover;border-radius:6px}
+.stat{min-height:1.5em;font-size:14px;color:var(--acc2);margin:10px 0}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding-top:34px}.photo{order:-1;width:170px;height:170px}.photo>*{font-size:42px}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.cur{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand mono" href="#top" id="brand"></a>
+  <nav id="nav" aria-label="Sections"></nav>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="en" aria-pressed="true">English</button>
+    <button data-l="hi" aria-pressed="false">हिंदी</button>
+  </div>
+</div></header>
+<main id="top"><div class="wrap" id="app"></div></main>
+<footer><div class="wrap"><span id="fcopy"></span><span id="flinks"></span></div></footer>
+<div id="lb" role="dialog" aria-label="Photo"><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button></div>
+
+<script id="main">
+/* =====================================================================
+   HOW TO CUSTOMIZE
+   A) On your claude.ai link (as the owner): tap the green "Edit site"
+      button. Add, reorder and remove photos, edit text, then tap
+      "Save and publish". No code needed.
+   B) If you host the file yourself (Netlify, GitHub Pages): edit the
+      SITE block below by hand. Text is { en: "English", hi: "हिंदी" }.
+      Put photos in an "images" folder and write "images/photo1.jpg".
+   Contact is Email and Instagram only. No phone number on this site.
+   ===================================================================== */
+/*DATA_START*/
+const SITE = {
+  name:     { en: "Anamol Kumar Yadav", hi: "अनमोल कुमार यादव" },
+  initials: "AY",
+  photo:    "",   /* MAIN PHOTO: file name or URL, e.g. "images/me.jpg" */
+  roles:    [ { en: "Hacker and Developer", hi: "हैकर और डेवलपर" } ],
+  hello:    { en: "Hi, I am", hi: "नमस्ते, मैं हूँ" },
+  tagline:  { en: "I break systems so I can make them unbreakable.", hi: "मैं सिस्टम तोड़ता हूँ ताकि उन्हें अटूट बना सकूँ।" },
+  email:     "anamolsir7061@gmail.com",
+  instagram: "https://www.instagram.com/anamol_7061?bqrl=cWdrMHNvcTl4MWF1",
+  /* Sections show top to bottom. Delete a block or set show:false to hide it.
+     Types: text, chips, cards, gallery, contact. Copy a block to add a section. */
+  sections: [
+    { id: "about", type: "text", show: true, title: { en: "About", hi: "मेरे बारे में" },
+      body: [ { en: "I am Anamol Kumar Yadav, a hacker and developer. I test websites, apps and accounts for weak spots, then build and fix them so they stay secure.",
+                hi: "मैं अनमोल कुमार यादव हूँ, एक हैकर और डेवलपर। मैं वेबसाइट, ऐप और अकाउंट की कमज़ोरियाँ ढूँढता हूँ और फिर उन्हें ठीक करके सुरक्षित बनाता हूँ।" } ] },
+    { id: "skills", type: "chips", show: true, title: { en: "Skills", hi: "स्किल्स" },
+      items: [ { en: "Ethical Hacking", hi: "एथिकल हैकिंग" }, { en: "Web Development", hi: "वेब डेवलपमेंट" },
+               { en: "App Development", hi: "ऐप डेवलपमेंट" }, { en: "Security Testing", hi: "सिक्योरिटी टेस्टिंग" },
+               { en: "Problem Solving", hi: "समस्या समाधान" } ] },
+    { id: "services", type: "cards", show: true, title: { en: "What I do", hi: "मैं क्या करता हूँ" },
+      items: [ { title: { en: "Websites and apps", hi: "वेबसाइट और ऐप" }, text: { en: "I design and build them from scratch.", hi: "मैं इन्हें शुरू से डिज़ाइन करके बनाता हूँ।" } },
+               { title: { en: "Security checks", hi: "सिक्योरिटी जाँच" }, text: { en: "I look for weak spots before attackers do.", hi: "हमलावरों से पहले मैं कमज़ोर जगहें ढूँढ लेता हूँ।" } },
+               { title: { en: "Fixing vulnerabilities", hi: "कमज़ोरियाँ ठीक करना" }, text: { en: "I patch the problems and harden the system.", hi: "मैं समस्याएँ ठीक करके सिस्टम को मज़बूत बनाता हूँ।" } } ] },
+    { id: "gallery", type: "gallery", show: true, title: { en: "Gallery", hi: "गैलरी" },
+      /* One line per photo: { src: "images/a.jpg", caption: { en: "", hi: "" } }. Order here = order on the page. */
+      items: [] },
+    { id: "contact", type: "contact", show: true, title: { en: "Contact", hi: "संपर्क करें" },
+      note: { en: "Message me for work, questions or a security check.", hi: "काम, सवाल या सिक्योरिटी जाँच के लिए मुझे मैसेज करें।" } }
+  ]
+};
+/*DATA_END*/
+
+var UI = {
+  email: { en: "Email", hi: "ईमेल" }, instagram: { en: "Instagram", hi: "इंस्टाग्राम" },
+  follow: { en: "Follow me", hi: "फ़ॉलो करें" }, mail: { en: "Send email", hi: "ईमेल भेजें" },
+  empty: { en: "Photos will appear here", hi: "फ़ोटो यहाँ दिखेंगी" },
+  footer: { en: "Ethical and legal work only.", hi: "सिर्फ़ एथिकल और कानूनी काम।" }
+};
+
+var lang = "en", tm, gl = [], gi = 0;
+try { var sv = localStorage.getItem("lang"); if (sv === "en" || sv === "hi") lang = sv; } catch (e) {}
+
+function T(v){ return v == null ? "" : typeof v === "string" ? v : (v[lang] || v.en || ""); }
+function E(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function safeUrl(u){ return /^(https?:|mailto:|\.{0,2}\/|[\w\-\/\.]+$|data:image\/)/i.test(u) ? u : ""; }
+function handle(){ var m = /instagram\.com\/([^\/?#]+)/i.exec(SITE.instagram || ""); return m ? "@" + m[1] : "Instagram"; }
+function sec(id){ return SITE.sections.filter(function(s){ return s.id === id; })[0]; }
+
+function renderSection(s){
+  var h = '<section id="' + E(s.id) + '" class="rv"><h2>' + E(T(s.title)) + '</h2>';
+  if (s.type === "text") {
+    h += '<div class="bio">' + (s.body || []).map(function(p){ return '<p>' + E(T(p)) + '</p>'; }).join("") + '</div>';
+  } else if (s.type === "chips") {
+    h += '<div class="chips">' + (s.items || []).map(function(i){ return '<span class="chip mono">' + E(T(i)) + '</span>'; }).join("") + '</div>';
+  } else if (s.type === "cards") {
+    h += '<div class="grid">' + (s.items || []).map(function(i){ return '<div class="card"><h3>' + E(T(i.title)) + '</h3><p>' + E(T(i.text)) + '</p></div>'; }).join("") + '</div>';
+  } else if (s.type === "gallery") {
+    var items = (s.items || []).filter(function(i){ return safeUrl(i.src || ""); });
+    gl = items.map(function(i){ return safeUrl(i.src); });
+    h += '<div class="gal">' + (items.length ? items.map(function(i, n){
+      var c = T(i.caption);
+      return '<button class="ph" data-n="' + n + '" aria-label="' + E(c || "Photo " + (n + 1)) + '"><img loading="lazy" src="' + E(safeUrl(i.src)) + '" alt="' + E(c) + '">' + (c ? '<span class="cap">' + E(c) + '</span>' : '') + '</button>';
+    }).join("") : [1,2,3,4,5,6].map(function(){ return '<div class="ph empty mono">' + E(T(UI.empty)) + '</div>'; }).join("")) + '</div>';
+  } else if (s.type === "contact") {
+    h += '<p style="color:var(--dim);margin:0 0 16px">' + E(T(s.note)) + '</p><div class="contact">';
+    if (SITE.email) h += '<a class="card" href="mailto:' + E(SITE.email) + '"><small>' + E(T(UI.email)) + '</small><b>' + E(SITE.email) + '</b><small>' + E(T(UI.mail)) + '</small></a>';
+    if (SITE.instagram) h += '<a class="card" href="' + E(SITE.instagram) + '" target="_blank" rel="noopener"><small>' + E(T(UI.instagram)) + '</small><b>' + E(handle()) + '</b><small>' + E(T(UI.follow)) + '</small></a>';
+    h += '</div>';
+  }
+  return h + '</section>';
+}
+
+function render(quiet){
+  document.documentElement.lang = lang;
+  document.title = T(SITE.name) + " | " + T(SITE.roles[0]);
+  var photo = safeUrl(SITE.photo || "");
+  var pic = photo ? '<img src="' + E(photo) + '" alt="' + E(T(SITE.name)) + '">' : '<div class="mono" aria-hidden="true">' + E(SITE.initials) + '</div>';
+  var live = SITE.sections.filter(function(s){ return s.show !== false; });
+  document.getElementById("app").innerHTML =
+    '<div class="hero"><div><p class="hi mono">$ ' + E(T(SITE.hello)) + '</p><h1>' + E(T(SITE.name)) + '</h1>' +
+    '<p class="role mono"><span id="typed"></span><span class="cur"></span></p><p class="tag">' + E(T(SITE.tagline)) + '</p>' +
+    '<div class="cta"><a class="btn main" href="mailto:' + E(SITE.email) + '">' + E(T(UI.mail)) + '</a><a class="btn" href="' + E(SITE.instagram) + '" target="_blank" rel="noopener">' + E(T(UI.instagram)) + '</a></div></div>' +
+    '<div class="photo">' + pic + '</div></div>' + live.map(renderSection).join("");
+  document.getElementById("nav").innerHTML = live.map(function(s){ return '<a href="#' + E(s.id) + '">' + E(T(s.title)) + '</a>'; }).join("");
+  document.getElementById("brand").textContent = "~/" + SITE.initials.toLowerCase();
+  document.getElementById("fcopy").textContent = "\u00A9 " + new Date().getFullYear() + " " + T(SITE.name) + ". " + T(UI.footer);
+  document.getElementById("flinks").innerHTML = '<a href="mailto:' + E(SITE.email) + '">' + E(SITE.email) + '</a> &nbsp; <a href="' + E(SITE.instagram) + '" target="_blank" rel="noopener">Instagram</a>';
+  [].forEach.call(document.querySelectorAll(".lang button"), function(b){ b.setAttribute("aria-pressed", String(b.dataset.l === lang)); });
+  var calm = quiet || matchMedia("(prefers-reduced-motion: reduce)").matches;
+  clearTimeout(tm);
+  var el = document.getElementById("typed"), txt = T(SITE.roles[0]), i = 0;
+  if (calm) { el.textContent = txt; } else { (function step(){ el.textContent = txt.slice(0, ++i); if (i < txt.length) tm = setTimeout(step, 70); })(); }
+  var els = document.querySelectorAll(".rv");
+  if (calm || !("IntersectionObserver" in window)) { [].forEach.call(els, function(e){ e.classList.add("on"); }); return; }
+  var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add("on"); io.unobserve(x.target); } }); }, { threshold: .08 });
+  [].forEach.call(els, function(e){ io.observe(e); });
+}
+
+document.querySelector(".lang").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if (!b) return;
+  lang = b.dataset.l;
+  try { localStorage.setItem("lang", lang); } catch (x) {}
+  render();
+});
+
+/* lightbox with next/previous */
+var lb = document.getElementById("lb"), lbi = lb.querySelector("img");
+function show(n){ gi = (n + gl.length) % gl.length; lbi.src = gl[gi]; lb.classList.add("on"); }
+document.getElementById("app").addEventListener("click", function(e){ var b = e.target.closest(".ph[data-n]"); if (b) show(+b.dataset.n); });
+lb.addEventListener("click", function(e){
+  if (e.target.classList.contains("pv")) show(gi - 1);
+  else if (e.target.classList.contains("nx")) show(gi + 1);
+  else lb.classList.remove("on");
+});
+document.addEventListener("keydown", function(e){
+  if (!lb.classList.contains("on")) return;
+  if (e.key === "Escape") lb.classList.remove("on");
+  if (e.key === "ArrowLeft") show(gi - 1);
+  if (e.key === "ArrowRight") show(gi + 1);
+});
+
+/* ---------- owner editing (appears only for the owner on the claude.ai link) ---------- */
+function buildDoc(){
+  var c = document.documentElement.cloneNode(true);
+  ["app","nav","fcopy","flinks","brand"].forEach(function(id){ var e = c.querySelector("#" + id); if (e) e.textContent = ""; });
+  var a = c.querySelector("#admin"); if (a) a.remove();
+  c.querySelector("#lb").className = "";
+  var json = JSON.stringify(SITE, null, 1).replace(/</g, "\\u003c");
+  var sc = c.querySelector("script#main");
+  sc.textContent = sc.textContent.replace(/\/\*DATA_START\*\/[\s\S]*?\/\*DATA_END\*\//, function(){ return "/*DATA_START*/\nconst SITE = " + json + ";\n/*DATA_END*/"; });
+  return "<!DOCTYPE html>\n" + c.outerHTML;
+}
+
+function buildAdmin(art, assets){
+  var box = document.createElement("div"); box.id = "admin";
+  var about = sec("about"), sk = sec("skills"), gal = sec("gallery");
+  function para(l, v){ var p = v.split(/\n\s*\n/); about.body = p.map(function(t, i){ var o = about.body[i] || { en: t, hi: t }; var n = { en: o.en, hi: o.hi }; n[l] = t; return n; }); }
+  function skl(l, v){ var p = v.split(",").map(function(x){ return x.trim(); }).filter(Boolean); sk.items = p.map(function(t, i){ var o = sk.items[i] || { en: t, hi: t }; var n = { en: o.en, hi: o.hi }; n[l] = t; return n; }); }
+  var F = [
+    ["नाम (English)", "t", function(){ return SITE.name.en; }, function(v){ SITE.name.en = v; }],
+    ["नाम (हिंदी)", "t", function(){ return SITE.name.hi; }, function(v){ SITE.name.hi = v; }],
+    ["टैगलाइन (English)", "a", function(){ return SITE.tagline.en; }, function(v){ SITE.tagline.en = v; }],
+    ["टैगलाइन (हिंदी)", "a", function(){ return SITE.tagline.hi; }, function(v){ SITE.tagline.hi = v; }]
+  ];
+  if (about) F.push(["About (English)", "a", function(){ return about.body.map(function(p){ return p.en; }).join("\n\n"); }, function(v){ para("en", v); }],
+                    ["About (हिंदी)", "a", function(){ return about.body.map(function(p){ return p.hi; }).join("\n\n"); }, function(v){ para("hi", v); }]);
+  if (sk) F.push(["Skills, comma से अलग (English)", "t", function(){ return sk.items.map(function(i){ return i.en; }).join(", "); }, function(v){ skl("en", v); }],
+                 ["Skills, comma से अलग (हिंदी)", "t", function(){ return sk.items.map(function(i){ return i.hi; }).join(", "); }, function(v){ skl("hi", v); }]);
+  F.push(["Email", "t", function(){ return SITE.email; }, function(v){ SITE.email = v.trim(); }],
+         ["Instagram link", "t", function(){ return SITE.instagram; }, function(v){ SITE.instagram = v.trim(); }]);
+
+  box.innerHTML = '<button id="ed-open" class="btn main">Edit site</button><aside id="ed" hidden><div class="row"><b>Edit site</b><button class="btn sm" id="ed-x" style="margin-left:auto">बंद करें</button></div>' +
+    '<h3>मुख्य फ़ोटो (Profile)</h3><div class="row"><label class="btn sm" style="margin:0">फ़ोटो चुनें<input type="file" accept="image/*" id="ed-pf" hidden></label><button class="btn sm" id="ed-pr">हटाएँ</button></div>' +
+    '<h3>टेक्स्ट</h3><div id="ed-f"></div>' +
+    '<h3>गैलरी फ़ोटो</h3><label class="btn sm" style="display:inline-block;margin:0">फ़ोटो जोड़ें (कई एक साथ)<input type="file" accept="image/*" multiple id="ed-gf" hidden></label><div id="ed-g"></div>' +
+    '<h3>सेक्शन दिखाएँ / छिपाएँ</h3><div id="ed-s"></div>' +
+    '<div class="stat" id="ed-st"></div><button class="btn main" id="ed-save" style="width:100%">Save and publish</button></aside>';
+  document.body.appendChild(box);
+  var $ = function(id){ return document.getElementById(id); };
+  function st(m){ $("ed-st").textContent = m; }
+  function again(){ render(true); list(); }
+
+  $("ed-f").innerHTML = F.map(function(f, i){
+    return '<label for="f' + i + '">' + f[0] + '</label>' + (f[1] === "a" ? '<textarea id="f' + i + '" data-i="' + i + '"></textarea>' : '<input type="text" id="f' + i + '" data-i="' + i + '">');
+  }).join("");
+  F.forEach(function(f, i){ $("f" + i).value = f[2](); });
+  $("ed-f").addEventListener("input", function(e){ var i = e.target.dataset.i; if (i != null) { F[i][3](e.target.value); render(true); } });
+
+  $("ed-s").innerHTML = SITE.sections.map(function(s, i){ return '<label style="display:flex;gap:8px;align-items:center;color:var(--text)"><input type="checkbox" data-s="' + i + '"' + (s.show !== false ? " checked" : "") + '>' + E(T(s.title)) + '</label>'; }).join("");
+  $("ed-s").addEventListener("change", function(e){ var i = e.target.dataset.s; if (i != null) { SITE.sections[i].show = e.target.checked; render(true); } });
+
+  function list(){
+    if (!gal) { $("ed-g").textContent = ""; return; }
+    $("ed-g").innerHTML = gal.items.map(function(it, i){
+      return '<div class="th"><img src="' + E(safeUrl(it.src)) + '" alt=""><div><input type="text" data-c="' + i + '" placeholder="Caption" value="' + E(it.caption ? (it.caption.en || "") : "") + '">' +
+        '<div class="row" style="margin-top:6px"><button class="btn sm" data-a="up" data-i="' + i + '">&#8593;</button><button class="btn sm" data-a="dn" data-i="' + i + '">&#8595;</button>' +
+        '<button class="btn sm" data-a="pf" data-i="' + i + '">Profile बनाएँ</button><button class="btn sm" data-a="rm" data-i="' + i + '">हटाएँ</button></div></div></div>';
+    }).join("");
+  }
+  list();
+  $("ed-g").addEventListener("input", function(e){ var i = e.target.dataset.c; if (i != null) { gal.items[i].caption = { en: e.target.value, hi: e.target.value }; render(true); } });
+  $("ed-g").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-a]"); if (!b) return;
+    var i = +b.dataset.i, a = b.dataset.a, it = gal.items;
+    if (a === "up" && i > 0) { var t = it[i]; it[i] = it[i - 1]; it[i - 1] = t; }
+    if (a === "dn" && i < it.length - 1) { var u = it[i]; it[i] = it[i + 1]; it[i + 1] = u; }
+    if (a === "rm") it.splice(i, 1);
+    if (a === "pf") SITE.photo = it[i].src;
+    again();
+  });
+
+  async function up(files){
+    var out = [];
+    for (var k = 0; k < files.length; k++) {
+      st("अपलोड हो रहा है " + (k + 1) + "/" + files.length + " ...");
+      var r = await assets.upload(files[k]);
+      out.push("/_blob/" + r.id);
+    }
+    return out;
+  }
+  $("ed-gf").addEventListener("change", async function(e){
+    try { var u = await up(e.target.files); u.forEach(function(s){ gal.items.push({ src: s, caption: { en: "", hi: "" } }); }); st("फ़ोटो जुड़ गईं। अब Save and publish दबाएँ."); again(); }
+    catch (x) { st("अपलोड नहीं हुआ: " + (x.code || x.message)); }
+    e.target.value = "";
+  });
+  $("ed-pf").addEventListener("change", async function(e){
+    try { var u = await up(e.target.files); SITE.photo = u[0]; st("मुख्य फ़ोटो बदल गई। अब Save and publish दबाएँ."); render(true); }
+    catch (x) { st("अपलोड नहीं हुआ: " + (x.code || x.message)); }
+    e.target.value = "";
+  });
+  $("ed-pr").addEventListener("click", function(){ SITE.photo = ""; render(true); });
+  $("ed-open").addEventListener("click", function(){ $("ed").hidden = false; });
+  $("ed-x").addEventListener("click", function(){ $("ed").hidden = true; });
+  $("ed-save").addEventListener("click", async function(){
+    st("सेव हो रहा है ...");
+    try { await art.publish(buildDoc()); st("सेव हो गया।"); }
+    catch (x) { st(x.code === "conflict" ? "किसी और वर्ज़न ने पहले सेव किया। पेज रीलोड करें." : "सेव नहीं हुआ: " + (x.code || x.message)); }
+  });
+}
+
+async function initAdmin(){
+  try {
+    if (!window.claude || !claude.use) return;
+    var user = await claude.use("user"); if (!user) return;
+    if (!((await user.canEdit()) || (await user.isOwner()))) return;
+    var art = await claude.use("artifact"), assets = await claude.use("assets");
+    if (art && assets) buildAdmin(art, assets);
+  } catch (e) {}
+}
+
+render();
+initAdmin();
+</script>
+</body>
+</html>
